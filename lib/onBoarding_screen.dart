@@ -45,7 +45,7 @@ class OnboardingScreen extends StatelessWidget {
       ),
       showDoneButton: true,
       onDone: () {
-        Navigator.pushNamed(context, HomeScreen.routeName);
+        Navigator.pushReplacementNamed(context, HomeScreen.routeName);
       },
       done: Text(
         "Finish",
