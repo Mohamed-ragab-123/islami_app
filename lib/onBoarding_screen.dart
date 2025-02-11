@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:islami_app/home_screen.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
-  static const String routeName = "OnbordingScreen";
+  static const String routeName = "OnboardingScreen";
 
   Widget _buildImage(String assetName) {
     return Image.asset(
@@ -14,13 +15,13 @@ class OnboardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const bodyStyle = TextStyle(
+    var bodyStyle = GoogleFonts.elMessiri(
       fontSize: 20.0,
       color: Color(0xFFE2BE7F),
     );
 
-    const pageDecoration = PageDecoration(
-      titleTextStyle: TextStyle(
+    var pageDecoration = PageDecoration(
+      titleTextStyle: GoogleFonts.elMessiri(
         fontSize: 24.0,
         fontWeight: FontWeight.w700,
         color: Color(0xFFE2BE7F),
@@ -44,11 +45,11 @@ class OnboardingScreen extends StatelessWidget {
       ),
       showDoneButton: true,
       onDone: () {
-        Navigator.pushNamed(context, HomeScreen.routeName);
+        Navigator.pushReplacementNamed(context, HomeScreen.routeName);
       },
       done: Text(
         "Finish",
-        style: TextStyle(
+        style: GoogleFonts.elMessiri(
           fontSize: 16.0,
           color: Color(0xFFE2BE7F),
         ),
@@ -56,7 +57,7 @@ class OnboardingScreen extends StatelessWidget {
       showNextButton: true,
       next: Text(
         "Next",
-        style: TextStyle(
+        style: GoogleFonts.elMessiri(
           fontSize: 16.0,
           color: Color(0xFFE2BE7F),
         ),
@@ -64,7 +65,7 @@ class OnboardingScreen extends StatelessWidget {
       showBackButton: true,
       back: Text(
         "Back",
-        style: TextStyle(
+        style: GoogleFonts.elMessiri(
           fontSize: 16.0,
           color: Color(0xFFE2BE7F),
         ),
