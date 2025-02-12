@@ -42,7 +42,6 @@ flutter:
 
 flutter_native_splash:
   color: "#202020"
-  background_image: "assets/images/splash.png"
   image: assets/images/icon_splash.png
   branding: assets/images/branding_splash.png
 
