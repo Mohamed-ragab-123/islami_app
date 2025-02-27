@@ -1,18 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:islami_app/model/sura_model.dart';
 
 class SuraCard extends StatelessWidget {
 
-  String ayaNum;
-  String arName;
-  String enName;
+  SuraModel model;
 
   SuraCard(
-      {super.key,
-        required this.arName,
-        required this.enName,
-        required this.ayaNum,
-      });
+      {super.key, required this.model,});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +25,7 @@ class SuraCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                enName,
+                model.enName,
                 style: GoogleFonts.elMessiri(
                     color: const Color(0xFF202020),
                     fontSize:24,
@@ -39,7 +34,7 @@ class SuraCard extends StatelessWidget {
               ),
               const SizedBox(height: 8),
               Text(
-                arName,
+                model.arName,
                 style: GoogleFonts.elMessiri(
                     color: const Color(0xFF202020),
                     fontSize:24,
@@ -48,7 +43,7 @@ class SuraCard extends StatelessWidget {
               ),
               const SizedBox(height: 8),
               Text(
-                "$ayaNum Verses",
+                "${model.ayaNum} Verses",
                 style: GoogleFonts.elMessiri(
                     color: const Color(0xFF202020),
                     fontSize:24,

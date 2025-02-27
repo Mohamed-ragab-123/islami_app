@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:islami_app/cache/cache_helper.dart';
 import 'package:islami_app/home/home_screen.dart';
 
 class OnboardingScreen extends StatelessWidget {
@@ -17,41 +18,42 @@ class OnboardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var bodyStyle = GoogleFonts.elMessiri(
       fontSize: 20.0,
-      color: Color(0xFFE2BE7F),
+      color: const Color(0xFFE2BE7F),
     );
 
     var pageDecoration = PageDecoration(
       titleTextStyle: GoogleFonts.elMessiri(
         fontSize: 24.0,
         fontWeight: FontWeight.w700,
-        color: Color(0xFFE2BE7F),
+        color: const Color(0xFFE2BE7F),
       ),
       bodyTextStyle: bodyStyle,
-      bodyPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
-      pageColor: Color(0xFF202020),
+      bodyPadding: const EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
+      pageColor: const Color(0xFF202020),
       imagePadding: EdgeInsets.zero,
       imageFlex: 4,
     );
 
     return IntroductionScreen(
-      dotsDecorator: DotsDecorator(
+      dotsDecorator: const DotsDecorator(
         color: Color(0xFF707070),
         activeColor: Color(0xFFE2BE7F),
       ),
       dotsFlex: 3,
-      globalBackgroundColor: Color(0xFF202020),
+      globalBackgroundColor: const Color(0xFF202020),
       globalHeader: Image.asset(
         "assets/images/onboarding_header.png",
       ),
       showDoneButton: true,
       onDone: () {
+        CacheHelper.saveEligibility();
         Navigator.pushReplacementNamed(context, HomeScreen.routeName);
       },
       done: Text(
         "Finish",
         style: GoogleFonts.elMessiri(
           fontSize: 16.0,
-          color: Color(0xFFE2BE7F),
+          color: const Color(0xFFE2BE7F),
         ),
       ),
       showNextButton: true,
@@ -59,7 +61,7 @@ class OnboardingScreen extends StatelessWidget {
         "Next",
         style: GoogleFonts.elMessiri(
           fontSize: 16.0,
-          color: Color(0xFFE2BE7F),
+          color: const Color(0xFFE2BE7F),
         ),
       ),
       showBackButton: true,
@@ -67,7 +69,7 @@ class OnboardingScreen extends StatelessWidget {
         "Back",
         style: GoogleFonts.elMessiri(
           fontSize: 16.0,
-          color: Color(0xFFE2BE7F),
+          color: const Color(0xFFE2BE7F),
         ),
       ),
       pages: [
