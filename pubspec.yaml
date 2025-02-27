@@ -20,6 +20,7 @@ dependencies:
   flutter_native_splash: ^2.4.4
   introduction_screen: ^3.1.14
   google_fonts: ^6.2.1
+  shared_preferences: ^2.5.2
 
 dev_dependencies:
   flutter_test:
@@ -42,7 +43,6 @@ flutter:
 
 flutter_native_splash:
   color: "#202020"
-  background_image: "assets/images/splash.png"
   image: assets/images/icon_splash.png
   branding: assets/images/branding_splash.png
 
