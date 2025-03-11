@@ -7,12 +7,16 @@ class SebihaTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: Colors.transparent,
-      body: Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      body: Stack(
+        children: [
+          Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
 
-        children: [Text("3",style: TextStyle(fontSize: 60,color: Colors.black),)],
-      ),
-    ),);
+            children: [Text("3",style: TextStyle(fontSize: 60,color: Colors.black),)],
+          ),
+              ),
+        ],
+      ),);
   }
 }

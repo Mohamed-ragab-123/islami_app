@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/model/sura_model.dart';
 
 class SuraDetailsScreen extends StatefulWidget {
@@ -24,21 +23,12 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
     }
 
     return Scaffold(
-      backgroundColor: const Color(0xFF202020),
+      backgroundColor: Theme.of(context).secondaryHeaderColor,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
         title: Text(
           model.enName,
       ),
-        titleTextStyle: GoogleFonts.elMessiri(
-          color: const Color(0xFFE2BE7F,),
-          fontSize: 24,
-          fontWeight: FontWeight.bold,
-        ),
-        centerTitle: true,
-        iconTheme: const IconThemeData(
-          color: Color(0xFFE2BE7F,),
-        ),
+        titleTextStyle: Theme.of(context).textTheme.titleLarge,
       ),
       body: Stack(
         alignment: Alignment.topCenter,
@@ -53,11 +43,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                 margin: const EdgeInsets.only(top: 16),
                 child: Text(
                   model.arName,
-                  style: GoogleFonts.elMessiri(
-                  color: const Color(0xFFE2BE7F,),
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  ),
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
               ),
               const SizedBox(height: 42),
@@ -70,7 +56,9 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                           padding: const EdgeInsets.symmetric(vertical: 16,horizontal: 8),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15),
-                            border: Border.all(color: const Color(0xFFE2BE7F,),),
+                            border: Border.all(
+                              color: Theme.of(context).primaryColor,
+                            ),
                           ),
                           child: Directionality(
                             textDirection: TextDirection.rtl,
@@ -80,19 +68,11 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                                   children: [
                                     TextSpan(
                                       text : "${verses[index]} ",
-                                      style: GoogleFonts.elMessiri(
-                                        color: const Color(0xFFE2BE7F,),
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold,
-                                      ),
+                                      style: Theme.of(context).textTheme.titleMedium,
                                     ),
                                     TextSpan(
                                       text : "(${index + 1})",
-                                      style: GoogleFonts.elMessiri(
-                                        color: const Color(0xFFE2BE7F,),
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold,
-                                      ),
+                                      style: Theme.of(context).textTheme.titleMedium,
                                     ),
                                   ],
                               ),

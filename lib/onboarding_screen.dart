@@ -9,38 +9,37 @@ class OnboardingScreen extends StatelessWidget {
   static const String routeName = "OnboardingScreen";
 
   Widget _buildImage(String assetName) {
-    return Image.asset(
-      'assets/images/$assetName.png',
-    );
+    return Image.asset('assets/images/$assetName.png',);
   }
 
   @override
   Widget build(BuildContext context) {
     var bodyStyle = GoogleFonts.elMessiri(
       fontSize: 20.0,
-      color: const Color(0xFFE2BE7F),
+      fontWeight: FontWeight.bold,
+      color: Theme.of(context).primaryColor,
     );
 
     var pageDecoration = PageDecoration(
       titleTextStyle: GoogleFonts.elMessiri(
         fontSize: 24.0,
-        fontWeight: FontWeight.w700,
-        color: const Color(0xFFE2BE7F),
+        fontWeight: FontWeight.bold,
+        color: Theme.of(context).primaryColor,
       ),
       bodyTextStyle: bodyStyle,
       bodyPadding: const EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
-      pageColor: const Color(0xFF202020),
+      pageColor: Theme.of(context).secondaryHeaderColor,
       imagePadding: EdgeInsets.zero,
       imageFlex: 4,
     );
 
     return IntroductionScreen(
-      dotsDecorator: const DotsDecorator(
-        color: Color(0xFF707070),
-        activeColor: Color(0xFFE2BE7F),
+      dotsDecorator:  DotsDecorator(
+        color: const Color(0xFF707070),
+        activeColor: Theme.of(context).primaryColor,
       ),
       dotsFlex: 3,
-      globalBackgroundColor: const Color(0xFF202020),
+      globalBackgroundColor: Theme.of(context).secondaryHeaderColor,
       globalHeader: Image.asset(
         "assets/images/onboarding_header.png",
       ),
@@ -51,26 +50,17 @@ class OnboardingScreen extends StatelessWidget {
       },
       done: Text(
         "Finish",
-        style: GoogleFonts.elMessiri(
-          fontSize: 16.0,
-          color: const Color(0xFFE2BE7F),
-        ),
+        style: Theme.of(context).textTheme.titleSmall
       ),
       showNextButton: true,
       next: Text(
         "Next",
-        style: GoogleFonts.elMessiri(
-          fontSize: 16.0,
-          color: const Color(0xFFE2BE7F),
-        ),
+        style: Theme.of(context).textTheme.titleSmall
       ),
       showBackButton: true,
       back: Text(
         "Back",
-        style: GoogleFonts.elMessiri(
-          fontSize: 16.0,
-          color: const Color(0xFFE2BE7F),
-        ),
+        style: Theme.of(context).textTheme.titleSmall
       ),
       pages: [
         PageViewModel(

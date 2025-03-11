@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/home/tabs/quran_tab/sura_card.dart';
 import 'package:islami_app/home/tabs/quran_tab/sura_name_item.dart';
 import 'package:islami_app/model/sura_model.dart';
@@ -38,23 +37,27 @@ class _QuranTabState extends State<QuranTab> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.transparent,
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _searchItem(),
-              const SizedBox(height: 20),
-              if (SuraModel.searchResult.isEmpty && searchController.text.isEmpty)
-                ...[_suraNameHorizontalList(),],
-              const SizedBox(height: 10),
-              _suraNameVerticalList(),
-              const SizedBox(height: 20),
-            ],
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      body: Stack(
+        children: [
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  _searchItem(),
+                  const SizedBox(height: 20),
+                  if (SuraModel.searchResult.isEmpty && searchController.text.isEmpty)
+                    ...[_suraNameHorizontalList(),],
+                  const SizedBox(height: 10),
+                  _suraNameVerticalList(),
+                  const SizedBox(height: 20),
+                ],
+              ),
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
@@ -62,36 +65,31 @@ class _QuranTabState extends State<QuranTab> {
   Widget _searchItem(){
     return TextField(
       controller: searchController,
-      cursorColor: const Color(0xFFE2BE7F),
-      style: GoogleFonts.elMessiri(
-          color: Colors.white,
-          fontSize:20,
-          fontWeight: FontWeight.bold
+      cursorColor: Theme.of(context).primaryColor,
+      style: Theme.of(context).textTheme.titleSmall?.copyWith(
+        color: const Color(0xFFFEFFE8),
       ),
       decoration: InputDecoration(
         labelText:"Sura Name",
-        labelStyle: GoogleFonts.elMessiri(
-            color: Colors.white,
-            fontSize:16,
-            fontWeight: FontWeight.bold
+        labelStyle: Theme.of(context).textTheme.titleSmall?.copyWith(
+          color: const Color(0xFFFEFFE8),
         ),
-
         prefixIcon:
         Image.asset(
           "assets/images/ic_quran.png",
-          color: const Color(0xFFE2BE7F),
+          color: Theme.of(context).primaryColor,
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: const BorderSide(
-            color: Color(0xFFE2BE7F),
+          borderSide: BorderSide(
+            color: Theme.of(context).primaryColor,
             width: 2,
           ),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: const BorderSide(
-            color: Color(0xFFE2BE7F),
+          borderSide: BorderSide(
+            color: Theme.of(context).primaryColor,
             width: 2,
           ),
         ),
@@ -104,10 +102,8 @@ class _QuranTabState extends State<QuranTab> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text("Most Recently ",
-          style: GoogleFonts.elMessiri(
-              color: Colors.white,
-              fontSize:16,
-              fontWeight: FontWeight.bold
+          style: Theme.of(context).textTheme.titleSmall?.copyWith(
+            color: const Color(0xFFFEFFE8),
           ),
         ),
         const SizedBox(height: 10),
@@ -136,10 +132,8 @@ class _QuranTabState extends State<QuranTab> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text("Suras List",
-            style: GoogleFonts.elMessiri(
-                color: Colors.white,
-                fontSize:16,
-                fontWeight: FontWeight.bold
+            style: Theme.of(context).textTheme.titleSmall?.copyWith(
+              color: const Color(0xFFFEFFE8),
             ),
           ),
           const SizedBox(height: 10),

@@ -7,11 +7,15 @@ class TimeTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: Colors.transparent,
-      body: Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [Text("5",style: TextStyle(fontSize: 60,color: Colors.black),)],
-      ),
-    ),);
+      body: Stack(
+        children: [
+          Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [Text("5",style: TextStyle(fontSize: 60,color: Colors.black),)],
+          ),
+              ),
+        ],
+      ),);
   }
 }

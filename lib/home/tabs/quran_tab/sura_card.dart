@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/model/sura_model.dart';
 
 class SuraCard extends StatelessWidget {
@@ -15,7 +14,7 @@ class SuraCard extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 8),
       decoration:
       BoxDecoration(
-        color: const Color(0xFFE2BE7F),
+        color: Theme.of(context).primaryColor,
         borderRadius: BorderRadius.circular(20),
       ),
       child: Row(
@@ -26,28 +25,22 @@ class SuraCard extends StatelessWidget {
             children: [
               Text(
                 model.enName,
-                style: GoogleFonts.elMessiri(
-                    color: const Color(0xFF202020),
-                    fontSize:24,
-                    fontWeight: FontWeight.bold
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                  color: Theme.of(context).secondaryHeaderColor,
                 ),
               ),
               const SizedBox(height: 8),
               Text(
                 model.arName,
-                style: GoogleFonts.elMessiri(
-                    color: const Color(0xFF202020),
-                    fontSize:24,
-                    fontWeight: FontWeight.bold
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                  color: Theme.of(context).secondaryHeaderColor,
                 ),
               ),
               const SizedBox(height: 8),
               Text(
                 "${model.ayaNum} Verses",
-                style: GoogleFonts.elMessiri(
-                    color: const Color(0xFF202020),
-                    fontSize:24,
-                    fontWeight: FontWeight.bold
+                style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                  color: Theme.of(context).secondaryHeaderColor,
                 ),
               ),
             ],

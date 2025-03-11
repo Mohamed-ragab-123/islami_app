@@ -6,7 +6,7 @@ import 'package:islami_app/home/tabs/sebiha_tab.dart';
 import 'package:islami_app/home/tabs/time_tab.dart';
 
 class HomeScreen extends StatefulWidget {
-   const HomeScreen({super.key});
+  const HomeScreen({super.key});
 
   static const String routeName = "home";
 
@@ -21,42 +21,37 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Container(
         decoration: BoxDecoration(
-          image:
-          DecorationImage(
+          image: DecorationImage(
             image: AssetImage("assets/images/${getBackgroundName(selectedIndex)}.png"),
-              fit:BoxFit.cover),),
-        child: Scaffold(
-      backgroundColor: Colors.transparent,
-bottomNavigationBar: BottomNavigationBar(backgroundColor:
-const Color(0xFFE2BE7F)
-    ,type:
-BottomNavigationBarType.fixed,
-    showSelectedLabels: true,
-    showUnselectedLabels: false,
-    selectedItemColor: Colors.white,
-    unselectedItemColor: const Color(0xFF202020),
-    currentIndex: selectedIndex,
-onTap: (value) {
-  selectedIndex=value;
-  setState(() {
-
-  });
-},
-    items: [
-  BottomNavigationBarItem(icon:_buildNavItem("ic_quran",0),label: "Quran",),
-  BottomNavigationBarItem(icon: _buildNavItem("ic_hadith",1),label: "Hadith"),
-  BottomNavigationBarItem(icon: _buildNavItem("ic_sebiha",2),label: "Sebiha"),
-  BottomNavigationBarItem(icon: _buildNavItem("ic_radio",3),label: "Radio"),
-  BottomNavigationBarItem(icon: _buildNavItem("ic_time",4),label: "Time"),]),
-          body: Column(
-            children: [
+            fit: BoxFit.fill,
+          ),
+        ),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        bottomNavigationBar: BottomNavigationBar(
+            currentIndex: selectedIndex,
+            onTap: (value) {
+              selectedIndex=value;
+              setState(() {});
+              },
+            items: [
+              BottomNavigationBarItem(icon:_buildNavItem("ic_quran",0),label: "Quran"),
+              BottomNavigationBarItem(icon: _buildNavItem("ic_hadith",1),label: "Hadith"),
+              BottomNavigationBarItem(icon: _buildNavItem("ic_sebiha",2),label: "Sebiha"),
+              BottomNavigationBarItem(icon: _buildNavItem("ic_radio",3),label: "Radio"),
+              BottomNavigationBarItem(icon: _buildNavItem("ic_time",4),label: "Time"),]),
+        body: Column(
+          children: [
               const SizedBox(height: 30),
               Image.asset("assets/images/onboarding_header.png"),
-              Expanded(child: tabs[selectedIndex]),
-
+              Expanded(
+                  child:
+                  tabs[selectedIndex],
+              ),
             ],
           ),
-    ),);
+      ),
+    );
   }
 
   List<Widget> tabs=[
@@ -84,22 +79,20 @@ onTap: (value) {
     }
   }
 
-Widget _buildNavItem(String imageName,int index){
-    return selectedIndex==index?Container(
+  Widget _buildNavItem(String imageName,int index){
+    return selectedIndex == index ?
+    Container(
       padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 6),
-      decoration:
-      BoxDecoration(
-
-        borderRadius:
-        BorderRadius.circular(66),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(66),
         color: const Color(0x99202020),
       ),
       child: ImageIcon(
-        AssetImage(
-            "assets/images/$imageName.png"),),)
-        :ImageIcon(
-      AssetImage(
-          "assets/images/$imageName.png"),);
-}
-
+        AssetImage("assets/images/$imageName.png",),
+      ),
+    ) :
+    ImageIcon(
+      AssetImage("assets/images/$imageName.png"),
+    );
+  }
 }

@@ -7,12 +7,15 @@ class HadithTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: Colors.transparent,
-
       body: Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      child: Stack(
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
 
-        children: [Text("2",style: TextStyle(fontSize: 60,color: Colors.black),)],
+            children: [Text("2",style: TextStyle(fontSize: 60,color: Colors.black),)],
+          ),
+        ],
       ),
     ),);
   }
