@@ -28,13 +28,13 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Scaffold(
       backgroundColor: Colors.transparent,
 bottomNavigationBar: BottomNavigationBar(backgroundColor:
-Color(0xFFE2BE7F)
+const Color(0xFFE2BE7F)
     ,type:
 BottomNavigationBarType.fixed,
     showSelectedLabels: true,
     showUnselectedLabels: false,
     selectedItemColor: Colors.white,
-    unselectedItemColor: Color(0xFF202020),
+    unselectedItemColor: const Color(0xFF202020),
     currentIndex: selectedIndex,
 onTap: (value) {
   selectedIndex=value;
@@ -50,7 +50,7 @@ onTap: (value) {
   BottomNavigationBarItem(icon: _buildNavItem("ic_time",4),label: "Time"),]),
           body: Column(
             children: [
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               Image.asset("assets/images/onboarding_header.png"),
               Expanded(child: tabs[selectedIndex]),
 
@@ -60,11 +60,11 @@ onTap: (value) {
   }
 
   List<Widget> tabs=[
-    QuranTab(),
-    HadithTab(),
-    SebihaTab(),
-    RadioTab(),
-    TimeTab(),
+    const QuranTab(),
+    const HadithTab(),
+    const SebihaTab(),
+    const RadioTab(),
+    const TimeTab(),
   ];
 
   String getBackgroundName(int index){
@@ -86,13 +86,13 @@ onTap: (value) {
 
 Widget _buildNavItem(String imageName,int index){
     return selectedIndex==index?Container(
-      padding: EdgeInsets.symmetric(horizontal: 20,vertical: 6),
+      padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 6),
       decoration:
       BoxDecoration(
 
         borderRadius:
         BorderRadius.circular(66),
-        color: Color(0x99202020),
+        color: const Color(0x99202020),
       ),
       child: ImageIcon(
         AssetImage(

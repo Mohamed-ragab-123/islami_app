@@ -24,19 +24,19 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
     }
 
     return Scaffold(
-      backgroundColor: Color(0xFF202020),
+      backgroundColor: const Color(0xFF202020),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         title: Text(
           model.enName,
       ),
         titleTextStyle: GoogleFonts.elMessiri(
-          color: Color(0xFFE2BE7F,),
+          color: const Color(0xFFE2BE7F,),
           fontSize: 24,
           fontWeight: FontWeight.bold,
         ),
         centerTitle: true,
-        iconTheme: IconThemeData(
+        iconTheme: const IconThemeData(
           color: Color(0xFFE2BE7F,),
         ),
       ),
@@ -50,27 +50,27 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
           Column(
             children: [
               Container(
-                margin: EdgeInsets.only(top: 16),
+                margin: const EdgeInsets.only(top: 16),
                 child: Text(
                   model.arName,
                   style: GoogleFonts.elMessiri(
-                  color: Color(0xFFE2BE7F,),
+                  color: const Color(0xFFE2BE7F,),
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
-              SizedBox(height: 42),
+              const SizedBox(height: 42),
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(20, 0, 20, 120),
                   child: ListView.separated(
                     itemBuilder: (context, index) {
                         return Container(
-                          padding: EdgeInsets.symmetric(vertical: 16,horizontal: 8),
+                          padding: const EdgeInsets.symmetric(vertical: 16,horizontal: 8),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15),
-                            border: Border.all(color: Color(0xFFE2BE7F,),),
+                            border: Border.all(color: const Color(0xFFE2BE7F,),),
                           ),
                           child: Directionality(
                             textDirection: TextDirection.rtl,
@@ -81,7 +81,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                                     TextSpan(
                                       text : "${verses[index]} ",
                                       style: GoogleFonts.elMessiri(
-                                        color: Color(0xFFE2BE7F,),
+                                        color: const Color(0xFFE2BE7F,),
                                         fontSize: 20,
                                         fontWeight: FontWeight.bold,
                                       ),
@@ -89,7 +89,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                                     TextSpan(
                                       text : "(${index + 1})",
                                       style: GoogleFonts.elMessiri(
-                                        color: Color(0xFFE2BE7F,),
+                                        color: const Color(0xFFE2BE7F,),
                                         fontSize: 20,
                                         fontWeight: FontWeight.bold,
                                       ),
@@ -100,7 +100,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                           ),
                         );
                         },
-                    separatorBuilder: (context, index) => SizedBox(height: 8),
+                    separatorBuilder: (context, index) => const SizedBox(height: 8),
                     itemCount: verses.length,
                   ),
                 ),
@@ -116,7 +116,6 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
     String file = await rootBundle.loadString("assets/files/Suras/$index.txt");
     List<String> lines = file.split("\n");
     verses = lines;
-    print(lines);
     setState(() {});
   }
 }
