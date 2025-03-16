@@ -143,6 +143,7 @@ class _QuranTabState extends State<QuranTab> {
             itemBuilder: (context, index) {
               return InkWell(
                 splashColor: Colors.transparent,
+                highlightColor: Colors.transparent,
                 onTap: (){
                   Navigator.pushNamed(context, SuraDetailsScreen.routeName,
                   arguments: SuraModel.getSuraModel(index),

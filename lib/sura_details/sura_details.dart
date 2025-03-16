@@ -60,22 +60,20 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                               color: Theme.of(context).primaryColor,
                             ),
                           ),
-                          child: Directionality(
+                          child: Text.rich(
                             textDirection: TextDirection.rtl,
-                            child: Text.rich(
-                              textAlign: TextAlign.center,
-                              TextSpan(
-                                  children: [
-                                    TextSpan(
-                                      text : "${verses[index]} ",
-                                      style: Theme.of(context).textTheme.titleMedium,
-                                    ),
-                                    TextSpan(
-                                      text : "(${index + 1})",
-                                      style: Theme.of(context).textTheme.titleMedium,
-                                    ),
-                                  ],
-                              ),
+                            textAlign: TextAlign.center,
+                            TextSpan(
+                                children: [
+                                  TextSpan(
+                                    text : "${verses[index]} ",
+                                    style: Theme.of(context).textTheme.titleMedium,
+                                  ),
+                                  TextSpan(
+                                    text : "(${index + 1})",
+                                    style: Theme.of(context).textTheme.titleMedium,
+                                  ),
+                                ],
                             ),
                           ),
                         );
@@ -94,7 +92,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
 
   loadSuraFile(int index) async {
     String file = await rootBundle.loadString("assets/files/Suras/$index.txt");
-    List<String> lines = file.split("\n");
+    List<String> lines = file.trim().split("\n");
     verses = lines;
     setState(() {});
   }

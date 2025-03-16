@@ -36,7 +36,21 @@ class MyThemeData {
           fontSize: 24,
           fontWeight: FontWeight.bold,
         ),
-
+        bodySmall: GoogleFonts.elMessiri(
+          color: blackColor,
+          fontSize: 16,
+          fontWeight: FontWeight.bold,
+        ),
+        bodyMedium: GoogleFonts.elMessiri(
+          color: blackColor,
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+        ),
+        bodyLarge: GoogleFonts.elMessiri(
+          color: blackColor,
+          fontSize: 24,
+          fontWeight: FontWeight.bold,
+        ),
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         type: BottomNavigationBarType.fixed,
@@ -47,5 +61,6 @@ class MyThemeData {
         unselectedItemColor: blackColor,
   )
   );
+
   static ThemeData darkTheme = ThemeData();
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/cache/cache_helper.dart';
+import 'package:islami_app/hadith_details/hadith_details.dart';
 import 'package:islami_app/home/home_screen.dart';
 import 'package:islami_app/my_theme_data.dart';
 import 'package:islami_app/onboarding_screen.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
       routes: {
         OnboardingScreen.routeName: (context) => const OnboardingScreen(),
         SuraDetailsScreen.routeName: (context) =>  const SuraDetailsScreen(),
+        hadithDetailsScreen.routeName: (context) =>  const hadithDetailsScreen(),
         HomeScreen.routeName: (context) => const HomeScreen(),
       },
     );
